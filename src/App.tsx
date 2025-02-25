@@ -3,10 +3,16 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from '@/components/ui/resizable.tsx';
-import MapView from '@/components/map-view';
+import {
+  MaplibreMapView,
+  OpenLayersMapView,
+  useMapStore,
+} from '@/components/map-view';
 import NavigationBar from '@/components/navigation-bar';
 
 function App() {
+  const map = useMapStore((state) => state.map);
+
   return (
     <>
       <NavigationBar />
@@ -20,7 +26,13 @@ function App() {
         ></ResizablePanel>
         <ResizableHandle withHandle className="hidden md:flex" />
         <ResizablePanel defaultSize={75}>
-          <MapView />
+          {map === 'MapLibre' ? (
+            <MaplibreMapView />
+          ) : map === 'OpenLayers' ? (
+            <OpenLayersMapView />
+          ) : (
+            'Map not found!'
+          )}
         </ResizablePanel>
       </ResizablePanelGroup>
     </>

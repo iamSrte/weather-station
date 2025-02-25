@@ -10,7 +10,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { useDebounce } from '@/hooks/useDebounce';
 import useSearchLocation from '@/hooks/useGeocoding';
-import { Geocode, useLocationStore } from '@/components/map-view';
+import { Geocode, useMapStore } from '@/components/map-view';
 
 function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,9 @@ function SearchBar() {
     debounceValue.toUpperCase()
   );
 
-  const updateGeocode = useLocationStore((state) => state.updateGeocode);
+  const updateGeocode = useMapStore((state) => state.updateGeocode);
+  const updateIsReached = useMapStore((state) => state.updateIsReached);
+  const updateIsSelected = useMapStore((state) => state.updateIsSelected);
 
   function handleInputChange(input: string) {
     setIsOpen(true);
@@ -30,6 +32,8 @@ function SearchBar() {
   function handleSelect(geocode: Geocode) {
     setIsOpen(false);
     setSearchInput('');
+    updateIsReached(false);
+    updateIsSelected(true);
     updateGeocode(geocode);
   }
 

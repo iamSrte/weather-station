@@ -1,6 +1,7 @@
-import MapView from './map-view';
-import useLocationStore, { Geocode, Location } from './store';
+import MaplibreMapView from './maplibre-map-view';
+import OpenLayersMapView from './openlayers-map-view';
+import useMapStore, { Geocode, Location } from './store';
 
-export { useLocationStore };
+export { MaplibreMapView, OpenLayersMapView, useMapStore };
 export type { Geocode, Location };
-export default MapView;
+export default MaplibreMapView;
