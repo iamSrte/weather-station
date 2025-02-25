@@ -14,8 +14,11 @@ function App() {
         direction="horizontal"
         className="w-full h-full flex-grow border-t"
       >
-        <ResizablePanel defaultSize={25}></ResizablePanel>
-        <ResizableHandle withHandle />
+        <ResizablePanel
+          defaultSize={25}
+          className="hidden md:flex"
+        ></ResizablePanel>
+        <ResizableHandle withHandle className="hidden md:flex" />
         <ResizablePanel defaultSize={75}>
           <MapView />
         </ResizablePanel>
