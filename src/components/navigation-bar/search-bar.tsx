@@ -9,27 +9,28 @@ import {
 } from '@/components/ui/command';
 import { Input } from '@/components/ui/input';
 import { useDebounce } from '@/hooks/useDebounce';
-import useSearchLocation, { Location } from '@/hooks/useGeocoding';
+import useSearchLocation from '@/hooks/useGeocoding';
+import { Geocode, useLocationStore } from '@/components/map-view';
 
-interface Props {
-  onSelect: (value: Location) => void;
-}
-
-function SearchBar({ onSelect }: Props) {
+function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const debounceValue = useDebounce(searchInput);
-  const { data, error, isLoading } = useSearchLocation(debounceValue);
+  const { data, error, isLoading } = useSearchLocation(
+    debounceValue.toUpperCase()
+  );
+
+  const updateGeocode = useLocationStore((state) => state.updateGeocode);
 
   function handleInputChange(input: string) {
     setIsOpen(true);
     setSearchInput(input);
   }
 
-  function handleSelect(data: Location) {
+  function handleSelect(geocode: Geocode) {
     setIsOpen(false);
     setSearchInput('');
-    onSelect(data);
+    updateGeocode(geocode);
   }
 
   return (
