@@ -43,9 +43,9 @@ function WeatherView() {
     }
 
     return (
-      <div className="flex flex-col h-full p-2 space-y-2">
+      <div className="flex flex-col h-full p-2 space-y-2 ">
         <CurrentWeatherView
-          className="h-auto rounded-md border"
+          className="h-auto rounded-md border overflow-x-clip"
           name={location[0].name}
           state={location[0].state}
           code={weather.current.weather_code}
@@ -54,7 +54,7 @@ function WeatherView() {
           feels={weather.current.apparent_temperature}
           humidity={weather.current.relative_humidity_2m}
         />
-        <ScrollArea className="h-full w-full rounded-md border overflow-auto">
+        <ScrollArea className="h-full w-full rounded-md border overflow-y-auto">
           <DailyWeatherView dailyData={dailyData} />
         </ScrollArea>
       </div>
