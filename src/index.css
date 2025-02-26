@@ -125,7 +125,7 @@
 }
 
 #root {
-    @apply h-screen flex flex-col;
+    @apply font-mono h-screen flex flex-col;
 }
 
 .ol-map {
