@@ -1,6 +1,5 @@
 import { Skeleton } from '@/components/ui/skeleton';
 
-
 function CurrentWeatherSkeleton() {
   return (
     <div className="h-auto border rounded-md space-y-2 p-4">

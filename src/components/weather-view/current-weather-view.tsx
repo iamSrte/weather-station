@@ -23,7 +23,7 @@ function CurrentWeatherView({
   humidity,
 }: Props) {
   return (
-    <div className={className + " text-nowrap"}>
+    <div className={className + ' text-nowrap'}>
       <div className="p-4 mx-2 content-start">
         <div className="flex flex-row items-center space-x-2">
           <WeatherIcon code={code} className="size-8 shrink-0" />
@@ -38,15 +38,15 @@ function CurrentWeatherView({
       </div>
       <div className="block justify-between border-t space-y-1 p-4 mx-2">
         <div className="flex flex-row items-center space-x-2">
-          <Wind className="shrink-0"/>
+          <Wind className="shrink-0" />
           <p className="">Wind {wind.toFixed()} km/s</p>
         </div>
         <div className="flex flex-row items-center space-x-2">
-          <Droplets className="shrink-0"/>
+          <Droplets className="shrink-0" />
           <p className="">Humidity {humidity.toFixed()}%</p>
         </div>
         <div className="flex flex-row items-center space-x-2">
-          <EqualApproximately className="shrink-0"/>
+          <EqualApproximately className="shrink-0" />
           <p>Feels like {feels.toFixed()}°</p>
         </div>
       </div>

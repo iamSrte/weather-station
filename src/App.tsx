@@ -21,7 +21,12 @@ function App() {
         direction="horizontal"
         className="w-full h-full flex-grow border-t"
       >
-        <ResizablePanel defaultSize={20} minSize={16} maxSize={30} className="hidden md:flex md:flex-col">
+        <ResizablePanel
+          defaultSize={20}
+          minSize={16}
+          maxSize={30}
+          className="hidden md:flex md:flex-col"
+        >
           <WeatherView />
         </ResizablePanel>
         <ResizableHandle withHandle className="hidden md:flex" />

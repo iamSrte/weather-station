@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Geocode } from '@/components/map-view';
 
-
 export interface CurrentWeather {
   time: string;
   weather_code: number;
