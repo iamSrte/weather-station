@@ -67,8 +67,7 @@ function SearchBar() {
                   >
                     {location.name}
                     <span className="text-sm text-muted-foreground">
-                      {location.state ? location.state : 'Unknown'}
-                      {', '}
+                      {location.state && location.state + ', '}
                       {location.country}
                     </span>
                   </CommandItem>
