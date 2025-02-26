@@ -8,6 +8,7 @@ import {
   OpenLayersMapView,
   useMapStore,
 } from '@/components/map-view';
+import WeatherView from '@/components/weather-view';
 import NavigationBar from '@/components/navigation-bar';
 
 function App() {
@@ -20,12 +21,11 @@ function App() {
         direction="horizontal"
         className="w-full h-full flex-grow border-t"
       >
-        <ResizablePanel
-          defaultSize={25}
-          className="hidden md:flex"
-        ></ResizablePanel>
+        <ResizablePanel defaultSize={20} minSize={16} maxSize={30} className="hidden md:flex md:flex-col">
+          <WeatherView />
+        </ResizablePanel>
         <ResizableHandle withHandle className="hidden md:flex" />
-        <ResizablePanel defaultSize={75}>
+        <ResizablePanel defaultSize={80}>
           {map === 'MapLibre' ? (
             <MaplibreMapView />
           ) : map === 'OpenLayers' ? (
