@@ -25,12 +25,14 @@
     "cmdk": "1.0.4",
     "lucide-react": "^0.476.0",
     "maplibre-gl": "^5.1.1",
+    "next-themes": "^0.4.6",
     "ol": "^10.4.0",
     "ol-mapbox-style": "^12.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-map-gl": "^8.0.1",
     "react-resizable-panels": "^2.1.7",
+    "sonner": "^2.0.2",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.9",
     "tailwindcss-animate": "^1.0.7",
@@ -52,5 +54,6 @@
     "typescript": "~5.7.3",
     "typescript-eslint": "^8.25.0",
     "vite": "^6.2.0"
-  }
+  },
+  "packageManager": "pnpm@10.5.1+sha512.c424c076bd25c1a5b188c37bb1ca56cc1e136fbf530d98bcb3289982a08fd25527b8c9c4ec113be5e3393c39af04521dd647bcf1d0801eaf8ac6a7b14da313af"
 }
