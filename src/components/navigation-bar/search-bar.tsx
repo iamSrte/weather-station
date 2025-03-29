@@ -38,11 +38,11 @@ function SearchBar() {
   }
 
   return (
-    <div className="relative">
+    <div className="flex-grow w-full max-w-100 min-w-0 relative">
       <div className="relative">
         <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transform text-muted-foreground" />
         <Input
-          className="w-100 pl-8"
+          className="pl-8"
           placeholder="Search a location..."
           value={searchInput}
           onChange={(e) => handleInputChange(e.target.value)}
